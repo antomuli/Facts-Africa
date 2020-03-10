@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "factsafrica"
+    }
+  },
+  "defaultProject": "factsafrica",
+  "cli": {
+    "analytics": "3a29f460-5c5d-4cf4-86a6-cd062c0c9329"
+  }
 }

@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     .subscribe(
       res => {
         localStorage.setItem('token', res.token)
-        this._router.navigate(['vendor'])
+        this._router.navigate(['buyer'])
       },
       err => console.log(err)
     )
