@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class InvoiceService {
 
-  private API = 'http://127.0.0.1:8000/api/?format=json'
+  private API = 'https://facts-africa.herokuapp.com/api/invoice'
 
   constructor(private http: HttpClient) { }
 
