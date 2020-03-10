@@ -10,13 +10,19 @@ import { InvoiceService } from '../services/invoice/invoice.service';
 export class VendorComponent implements OnInit {
   invoices = []
 
-  constructor(private dataService: InvoiceService) { }
+  constructor(private dataService: InvoiceService, private router: Router) { }
 
   ngOnInit() {
-    this.dataService.getInvoices().subscribe((data:any[])=>{
-      console.log(data)
-      this.invoices = data
-  })
+    console.log("vendors component loaded")
+    this.dataService.getInvoices().subscribe( res => {
+      this.invoices = res
+    }, error => console.log(error))
+  }
+
+  Logout =() => {
+    console.log("user is logging out")
+    localStorage.clear();
+    this.router.navigate(['/']);
   }
 
 }

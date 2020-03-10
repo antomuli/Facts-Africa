@@ -1,22 +1,30 @@
-<div *ngIf="isLoginError" class="red-text center error-message">
-    <i class="material-icons">error</i> Incorrect email or password
-</div>
-<form #loginForm="ngForm" class="col s12 white" (ngSubmit)="OnSubmit(email.value,password.value)">
-   <div class="row">
-     <div class="input-field col s12">
-       <i class="material-icons prefix">account_circle</i>
-       <input type="text" #email ngModel name="email" placeholder="email" required>
-     </div>
-   </div>
-   <div class="row">
-      <div class="input-field col s12">
-        <i class="material-icons prefix">vpn_key</i>
-        <input type="password" #password ngModel name="password" placeholder="password" required>
-      </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s12">
-          <button [disabled]="!loginForm.valid" class="btn-large btn-submit" type="submit">Login</button>
+<div class="mylogin">
+  <div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+      <div class="user_card">
+       
+        <div class="d-flex justify-content-center">
+            <img src="./assets/images/FACTS_logo-1.jpg" height="40px" alt="">
+          
+        </div>
+        <div class="d-flex justify-content-center form_container">
+          <form class="form">
+            <div class="text-center">
+              <h5>Welcome,login to your account.</h5>
+            </div>
+              <div class="form-group">
+                <label for="uname1">Email</label>
+                <input type="text" class="form-control rounded-0" [(ngModel)]="loginUserData.email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control rounded-0" [(ngModel)]="loginUserData.password" name="password" required>
+              </div>
+              <button type="button" (click)="loginUser()" class="btn btn-success btn-sm float-center">Login</button>
+            </form>
         </div>
       </div>
-</form>
+    </div>
+  </div>
+  
+</div>
