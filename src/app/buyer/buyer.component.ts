@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { InvoiceService } from '../services/invoice/invoice.service';
 
 @Component({
   selector: 'app-buyer',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./buyer.component.css']
 })
 export class BuyerComponent implements OnInit {
+  invoices = []
 
-  constructor() { }
+  constructor(private dataService: InvoiceService) { }
 
   ngOnInit() {
+    this.dataService.getInvoices().subscribe((data:any[])=>{
+      console.log(data)
+      this.invoices = data
+  })
   }
-
 }

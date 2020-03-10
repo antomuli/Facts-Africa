@@ -129,15 +129,41 @@
   </div>
   <!-- sidebar-container END -->
   <div class="col p-4">
-    <h1 class="display-4">Facts</h1>
-    <div class="card">
-        <h5 class="card-header font-weight-light">Data</h5>
-        <div class="card-body">
-            <ul>
-                list data
-            </ul>
-        </div>
+    <h1 class="display-4 text-center">Facts</h1>
+    <div>
+      <button class='btn btn-primary'>Upload Invoice</button>
     </div>
-</div>
+
+    <div class="card">
+      <h5 class="card-header font-weight-light text-center">Invoices</h5>
+      <div class="card-body">
+        <div class="container">
+          <table class="table pt-5">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Buyer</th>
+                  <th scope="col">Due date</th>
+                  <th scope="col">Invoice</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let invoices of invoices">
+                <tr>
+                  <th scope="row">{{invoices.id}}</th>
+                  <td>{{invoices.name}}</td>
+                  <td>{{invoices.buyer}}</td>
+                  <td></td>
+                  <td></td>
+                  <td>{{invoices.status}}</td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+
+      </div>
+    </div>
+  </div>
 <!-- Main Col END -->
 </div>
