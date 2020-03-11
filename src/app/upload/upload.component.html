@@ -90,16 +90,16 @@
                 <form method="POST" action="">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Buyer</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Buyer">
+                      <input [(ngModel)]="register.buyer" name='buyer'  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Buyer">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Amount</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Amount">
+                        <input [(ngModel)]="register.amount" name='amount' type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Amount">
                       </div>                    <div class="form-group">
                         <label for="exampleInputEmail1">Due date</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Due Date">
+                        <input [(ngModel)]="register.due_date" name='due_date' type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Due Date">
                       </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button (click)="uploadInvoice()" type="submit" class="btn btn-primary">Submit</button>
                   </form>
             </div>
         </div>
