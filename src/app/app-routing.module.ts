@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { VendorComponent } from './vendor/vendor.component';
 import { BuyerComponent } from './buyer/buyer.component';
+import { UploadComponent } from './upload/upload.component';
 
 
 const routes: Routes = [
@@ -20,8 +21,8 @@ const routes: Routes = [
     component: BuyerComponent
   },
   {
-    path: 'buyer',  
-    component: BuyerComponent
+    path: 'upload',  
+    component: UploadComponent
   },
 ];
 
