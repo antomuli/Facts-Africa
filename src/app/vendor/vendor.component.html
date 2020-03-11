@@ -59,26 +59,34 @@
               <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Buyer</th>
+                    <!-- <th scope="col">ID</th> -->
+                    <!-- <th scope="col">Buyer</th> -->
+                    <th scope="col">Date posted</th>
                     <th scope="col">Due Date</th>
-                    <th scope="col">Amount</th>
-                    <th scope="col">Invoice Status</th>
+                    <th scope="col">Invoice</th>
+
+                    <!-- <th scope="col">Amount</th> -->
+                    <!-- <th scope="col">Invoice Status</th> -->
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let invoice of invoices" >
-                    <th scope="row">{{invoice.id}}</th>
-                    <td>{{invoice.buyer_id}}</td>
+                    <!-- <th scope="row">{{invoice.id}}</th> -->
+                    <!-- <td>{{invoice.buyer_id}}</td> -->
+                    <td scope="row">{{invoice.created_at}}</td>
                     <td>{{invoice.due_date}}</td>
-                    <td>{{invoice.amount}}</td>
-                    <td>{{invoice.invoice_status}}</td>
+                    <td><button class="btn btn-sm btn-primary">View Invoice</button></td>
+
+                    <button class="btn btn-sm btn--primary"></button>
+                    <!-- <td>{{invoice.amount}}</td> -->
+                    <!-- <td>{{invoice.invoice_status}}</td> -->
                   </tr>
                 </tbody>
               </table>
             </div>
             </div>
           </div>
+
         </div>
         <!-- Main Col END -->
       </div>
