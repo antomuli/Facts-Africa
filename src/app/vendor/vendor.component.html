@@ -174,7 +174,7 @@
       </div>
       <div class="modal-body">
         <div class="col-sm-4">
-          <form action="/action_page.php">
+          <form action="https://facts-africa.herokuapp.com/api/invoices" method="POST">
             <div class="form-group">
               <label for="Amount">Amount</label>
               <input type="Amount" class="form-control" placeholder="" id="Amount">
@@ -182,6 +182,10 @@
             <div class="form-group">
               <label for="Buyer id">Buyer id</label>
               <input type="Buyer id" class="form-control" placeholder="" id="Buyer id">
+            </div>
+            <div class="form-group">
+              <label>Due Date</label>
+                <input type="text" id="datepicker" class="form-control" placeholder="Enter Due Date">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
