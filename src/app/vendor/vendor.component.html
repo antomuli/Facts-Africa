@@ -1,79 +1,40 @@
 <!-- NavBar END -->
 <!-- Bootstrap row -->
-<<<<<<< HEAD
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Invoice</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="col-sm-4">
-          <form action="https://facts-africa.herokuapp.com/api/invoices" method="POST">
-            <div class="form-group">
-              <label for="Amount">Amount</label>
-              <input type="Amount" class="form-control" placeholder="" id="Amount">
-            </div>
-            <div class="form-group">
-              <label for="Buyer id">Buyer id</label>
-              <input type="Buyer id" class="form-control" placeholder="" id="Buyer id">
-            </div>
-            <div class="form-group">
-              <label>Due Date</label>
-              <input type="text" id="datepicker" class="form-control" placeholder="Enter Due Date">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Approve invoice</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-=======
->>>>>>> 7af1c3c3ff57b9273bbf42d6a079f02e85361669
 <div class="d-flex" id="wrapper">
-
-  <!-- Sidebar -->
-  <div class="bg-light border-right" id="sidebar-wrapper">
-    <div class="sidebar-heading"><strong>Dashboard</strong></div>
-    <div class="list-group list-group-flush">
-
-      <a routerLink='buyer' class="list-group-item list-group-item-action bg-light p-3">Invoices</a>
-      <a href="#" class="list-group-item list-group-item-action bg-light p-3">Invoice Statements</a>
-      <a href="#" class="list-group-item list-group-item-action bg-light p-3">My Buyers</a>
-      <a href="#" class="list-group-item list-group-item-action bg-light p-3">Request Loan</a>
-
-
-
-
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading">Welcome</div>
+      <div class="list-group list-group-flush">
+        <a routerLink='buyer' class="list-group-item list-group-item-action bg-light">Invoices</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Invoice Statements</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">My Buyers</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Request Loan</a>
+      </div>
     </div>
-  </div>
-  <!-- /#sidebar-wrapper -->
-
-  <!-- Page Content -->
-  <div id="page-content-wrapper">
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-      <a class="navbar-brand" href="#">
-        <img src="./assets/images/FACTS_logo-1.jpg" height="40" class="d-inline-block align-top " /></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="flex-grow-1 d-flex">
-          <!-- <form
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <a class="navbar-brand" href="#">
+          <img
+            src="./assets/images/FACTS_logo-1.jpg"
+            height="40"
+            class="d-inline-block align-top "
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="flex-grow-1 d-flex">
+            <form
               class="form-inline flex-nowrap bg-light mx-0 mx-lg-auto rounded p-1"
             >
               <input
@@ -83,39 +44,18 @@
                 aria-label="Search"
               />
               <button class="btn btn-outline-success" type="submit">Search</button>
-            </form> -->
+            </form>
+          </div>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" (click)="Logout()" href="#">Logout</a>
+            </li>
+          </ul>
         </div>
-<<<<<<< HEAD
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" (click)="Logout()" href="#"><i class="fas fa-sign-out-alt fa-2x"></i></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-
-    <div class="row mt-4" id="body-row">
-      <router-outlet></router-outlet>
-      <!-- Sidebar -->
-
-      <!-- sidebar-container END -->
-      <div class="col p-4">
-        <h4 class="text-center">List Of Invoices.</h4>
-        <div>
-          <button class='btn btn-primary m-5' data-toggle="modal" data-target="#exampleModal">Upload Invoice</button>
-        </div>
-        <div class="card">
-          <h5 class="card-header font-weight-light text-center">Invoices</h5>
-          <div class="card-body">
-=======
       </nav>loginUser
-
-
       <div class="row mt-4" id="body-row">
         <router-outlet></router-outlet>
         <!-- Sidebar -->
-        
         <!-- sidebar-container END -->
         <div class="col p-4">
           <h4 class="text-center">List Of Invoices.</h4>
@@ -125,7 +65,6 @@
           <div class="card">
             <h5 class="card-header font-weight-light text-center">Invoices</h5>
             <div class="card-body">
->>>>>>> 7af1c3c3ff57b9273bbf42d6a079f02e85361669
             <div class="container">
               <table class="table">
                 <thead>
@@ -135,11 +74,10 @@
                     <th scope="col">Due Date</th>
                     <th scope="col">Amount</th>
                     <th scope="col">Invoice Status</th>
-                    
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let invoice of invoices">
+                  <tr *ngFor="let invoice of invoices" >
                     <th scope="row">{{invoice.id}}</th>
                     <td>{{invoice.buyer_id}}</td>
                     <td>{{invoice.due_date}}</td>
@@ -149,8 +87,8 @@
                 </tbody>
               </table>
             </div>
+            </div>
           </div>
         </div>
+        <!-- Main Col END -->
       </div>
-      <!-- Main Col END -->
-    </div>
