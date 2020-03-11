@@ -10,13 +10,15 @@ import { FooterComponent } from './footer/footer.component';
 import { BuyerComponent } from './buyer/buyer.component';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     VendorComponent,
     FooterComponent,
-    BuyerComponent
+    BuyerComponent,
+    
   ],
   imports: [
     BrowserModule,
