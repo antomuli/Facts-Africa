@@ -1,28 +1,19 @@
-
 <!-- NavBar END -->
 <!-- Bootstrap row -->
 <div class="d-flex" id="wrapper">
-
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">Welcome</div>
       <div class="list-group list-group-flush">
-        
         <a routerLink='buyer' class="list-group-item list-group-item-action bg-light">Invoices</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Invoice Statements</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">My Buyers</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Request Loan</a>
-
-
-
-  
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
-
     <!-- Page Content -->
     <div id="page-content-wrapper">
-
       <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <a class="navbar-brand" href="#">
           <img
@@ -43,31 +34,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <div class="flex-grow-1 d-flex">
-            <form
-              class="form-inline flex-nowrap bg-light mx-0 mx-lg-auto rounded p-1"
-            >
-              <input
-                class="form-control mr-sm-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+ 
           </div>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" (click)="Logout()" href="#">Logout</a>
+              <a class="nav-link" (click)="Logout()" href="#"><i class="fas fa-sign-out-alt fa-2x"></i></a>
             </li>
           </ul>
         </div>
-      </nav>loginUser
-
-
+      </nav>
       <div class="row mt-4" id="body-row">
         <router-outlet></router-outlet>
         <!-- Sidebar -->
-        
         <!-- sidebar-container END -->
         <div class="col p-4">
           <h4 class="text-center">List Of Invoices.</h4>
