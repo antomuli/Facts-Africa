@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth/auth.service';
 import { Router } from '@angular/router';
-import { HttpErrorResponse } from '@angular/common/http/http';
 
 @Component({
   selector: 'app-login',
@@ -10,20 +9,24 @@ import { HttpErrorResponse } from '@angular/common/http/http';
 })
 export class LoginComponent implements OnInit {
 
-  isLoginError : boolean = false;
-  constructor(private authService : AuthService,private router : Router) { }
+  loginUserData = {}
+
+  constructor(private _auth: AuthService,private _router: Router) { }
 
   ngOnInit() {
+    if(localStorage.getItem('token')) {
+      this._router.navigate(['vendor'])
+    }
   }
-
-  OnSubmit(userName,password){
-     this.authService.userAuthentication(userName,password).subscribe((data : any)=>{
-      localStorage.setItem('userToken',data.access_token);
-      this.router.navigate(['']);
-    },
-    (err : HttpErrorResponse)=>{
-      this.isLoginError = true;
-    });
+  loginUser () {
+    console.log("user is logging in")
+    this._auth.loginUser(this.loginUserData)
+    .subscribe(
+      res => {
+        localStorage.setItem('token', res.api_token)
+        this._router.navigate(['vendor'])
+      },
+      err => console.log(err)
+    )
   }
-
 }
