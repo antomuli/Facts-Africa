@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'buyer',
     component: BuyerComponent
   },
+  {
+    path: 'buyer',  
+    component: BuyerComponent
+  },
 ];
 
 @NgModule({
