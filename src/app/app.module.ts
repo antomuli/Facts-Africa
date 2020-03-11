@@ -11,6 +11,7 @@ import { BuyerComponent } from './buyer/buyer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UploadComponent } from './upload/upload.component';
 import { SearchComponent } from './search/search.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { SearchComponent } from './search/search.component';
     BuyerComponent,
     UploadComponent,
     SearchComponent,
+    Ng2SearchPipeModule,
     
   ],
   imports: [
