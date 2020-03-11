@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class AuthService {
 
-  private _loginUrl = 'http://127.0.0.1:8000/api/rest-auth/login/'
+  private _loginUrl = 'https://facts-africa.herokuapp.com/api/login'
 
   constructor(private http: HttpClient) { }
 

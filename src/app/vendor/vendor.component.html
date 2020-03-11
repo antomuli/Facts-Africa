@@ -148,17 +148,13 @@
                   <th scope="col">Status</th>
                 </tr>
               </thead>
-              <tbody *ngFor="let invoices of invoices">
-                <tr>
-                  <th scope="row">{{invoices.id}}</th>
-                  <td>{{invoices.name}}</td>
-                  <td>{{invoices.buyer}}</td>
-                  <td></td>
-                  <td></td>
-                  <td>{{invoices.status}}</td>
-                </tr>
-              </tbody>
+              
             </table>
+            <ul>
+                <li *ngFor="let invoice of invoices">
+                    {{ invoice.buyer_id }}
+                </li>
+            </ul>
       </div>
       
       </div>

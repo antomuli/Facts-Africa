@@ -1,16 +1,26 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
+
+
+const token = localStorage.getItem('token')
 
 @Injectable({
   providedIn: 'root'
 })
 export class InvoiceService {
 
-  private API = 'http://127.0.0.1:8000/api/?format=json'
+  private API = 'https://facts-africa.herokuapp.com/api/invoices';
+  private apiToken: String;
 
-  constructor(private http: HttpClient) { }
+  headers = new HttpHeaders().set("Authorization", `Bearer ${token}`)
+
+  constructor(private http: HttpClient) { 
+    
+  }
+
 
   getInvoices() {
-    return this.http.get<any>(this.API)
+    console.log(this.headers)
+    return this.http.get<any>(this.API, { headers: this.headers})
   }
 }
