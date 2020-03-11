@@ -73,8 +73,8 @@
                   <tr *ngFor="let invoice of invoices" >
                     <!-- <th scope="row">{{invoice.id}}</th> -->
                     <!-- <td>{{invoice.buyer_id}}</td> -->
-                    <td scope="row">{{invoice.created_at}}</td>
-                    <td>{{invoice.due_date}}</td>
+                    <td scope="row">{{invoice.created_at|date}}</td>
+                    <td>{{invoice.due_date|date}}</td>
                     <td><button class="btn btn-sm btn-primary">View Invoice</button></td>
 
                     <button class="btn btn-sm btn--primary"></button>
