@@ -20,6 +20,8 @@ export class VendorComponent implements OnInit {
     }, error => console.log(error))
   }
 
+  
+
   Logout =() => {
     console.log("user is logging out")
     localStorage.clear();
