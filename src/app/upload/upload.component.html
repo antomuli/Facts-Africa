@@ -69,19 +69,19 @@
         <!-- sidebar-container END -->
         <div class="col p-4">
             <div class="m-3 p-2">
-                <form method="POST" action="">
+                <form method="POST" action="" enctype="multipart/form-data">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Buyer</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Buyer">
+                      <input type="text" id="buyer" class="form-control" id="exampleInputtext1" aria-describedby="textHelp" placeholder="Enter Buyer">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Amount</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Amount">
+                        <label for="exampleInputtext1">Amount</label>
+                        <input type="text" id="amount" class="form-control" id="exampleInputtext1" aria-describedby="textHelp" placeholder="Enter Amount">
                       </div>                    <div class="form-group">
                         <label for="exampleInputEmail1">Due date</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Due Date">
+                        <input type="date" id="duedate" class="form-control" placeholder="Enter Due Date">
                       </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" id="upload" class="btn btn-primary">Submit</button>
                   </form>
             </div>
         </div>
