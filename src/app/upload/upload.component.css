@@ -138,3 +138,7 @@ body {
       padding: 5px;
       vertical-align: top;
      }
+     .invoice-box table tr td:nth-child(2) {
+      text-align: right;
+      }
+      
