@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { InvoiceService } from '../services/invoice/invoice.service';
 
 @Component({
   selector: 'app-upload',
@@ -9,12 +10,23 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UploadComponent implements OnInit {
 
-  SERVER_URL = "https://facts-africa.herokuapp.com/api/invoices";
-  uploadForm: FormGroup; 
+  token = localStorage.getItem('token')
+  private API = 'https://facts-africa.herokuapp.com/api/invoices';
+  headers = new HttpHeaders().set("Authorization", `Bearer ${this.token}`)
 
-  constructor() { }
+  uploadForm = new FormGroup({
+    buyer: new FormControl(),
+    amount: new FormControl(),
+    duedate: new FormControl()
+ });
+
+  constructor(private http: HttpClient,private invoiceService:InvoiceService) {
+   }
 
   ngOnInit() {
+  }
+  postInvoices(){
+    console.warn(this.uploadForm.value);
   }
 
 }
