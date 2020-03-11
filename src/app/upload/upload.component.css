@@ -134,3 +134,7 @@ body {
     font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
     color: #555;
     }
+    .invoice-box table td {
+      padding: 5px;
+      vertical-align: top;
+     }
