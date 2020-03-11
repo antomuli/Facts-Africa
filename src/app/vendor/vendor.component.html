@@ -149,15 +149,14 @@
 
                 </tr>
               </thead>
-
-            </table>
             <ul>
                 <li *ngFor="let invoice of invoices">
-                    {{ invoice.buyer_id }}
-                    {{ invoice.due_date}}
-                    {{ invoice.amount}}
+                    <td>{{ invoice.buyer_id }}</td>
+                    <td>{{ invoice.due_date}}</td>
+                    <td>{{ invoice.amount}}</td>
                 </li>
             </ul>
+            </table>
       </div>
 
       </div>
