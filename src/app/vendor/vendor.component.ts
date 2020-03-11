@@ -27,5 +27,8 @@ export class VendorComponent implements OnInit {
     localStorage.clear();
     this.router.navigate(['/']);
   }
+  Upload = () => {
+      this.router.navigate(['upload'])
+  }
 
 }
