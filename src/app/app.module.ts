@@ -10,7 +10,6 @@ import { FooterComponent } from './footer/footer.component';
 import { BuyerComponent } from './buyer/buyer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UploadComponent } from './upload/upload.component';
-import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -20,9 +19,7 @@ import { SearchComponent } from './search/search.component';
     VendorComponent,
     FooterComponent,
     BuyerComponent,
-    UploadComponent,
-    SearchComponent,
-    
+    UploadComponent, 
   ],
   imports: [
     BrowserModule,
