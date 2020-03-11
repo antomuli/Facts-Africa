@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { Observable } from 'rxjs';
 
 
 const token = localStorage.getItem('token')
@@ -14,7 +15,7 @@ export class InvoiceService {
 
   headers = new HttpHeaders().set("Authorization", `Bearer ${token}`)
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient,) { 
     
   }
 
@@ -22,5 +23,9 @@ export class InvoiceService {
   getInvoices() {
     console.log(this.headers)
     return this.http.get<any>(this.API, { headers: this.headers})
+  }
+
+  invoiceUpload(invoicedata): Observable<any> {
+    return this.http.post(this.API,{ headers: this.headers},invoicedata)
   }
 }
