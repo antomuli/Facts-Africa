@@ -10,6 +10,8 @@ import { FooterComponent } from './footer/footer.component';
 import { BuyerComponent } from './buyer/buyer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UploadComponent } from './upload/upload.component';
+import { ViewbuyersComponent } from './viewbuyers/viewbuyers.component';
+import { InvoicesComponent } from './invoices/invoices.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { UploadComponent } from './upload/upload.component';
     VendorComponent,
     FooterComponent,
     BuyerComponent,
-    UploadComponent, 
+    UploadComponent,
+    ViewbuyersComponent,
+    InvoicesComponent, 
   ],
   imports: [
     BrowserModule,

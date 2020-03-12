@@ -1,0 +1,38 @@
+<h4 class="text-center mt-5">List Of Invoices.</h4>
+<div>
+  <a  (click)="Upload()" class='btn btn-primary m-5'>Upload Invoice</a>
+</div>
+<div class="card">
+  <h5 class="card-header font-weight-light text-center">Invoices</h5>
+  <div class="card-body">
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <!-- <th scope="col">ID</th> -->
+          <!-- <th scope="col">Buyer</th> -->
+          <th scope="col">Date posted</th>
+          <th scope="col">Due Date</th>
+          <th scope="col">Invoice</th>
+
+          <!-- <th scope="col">Amount</th> -->
+          <!-- <th scope="col">Invoice Status</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let invoice of invoices" >
+          <!-- <th scope="row">{{invoice.id}}</th> -->
+          <!-- <td>{{invoice.buyer_id}}</td> -->
+          <td scope="row">{{invoice.created_at|date}}</td>
+          <td>{{invoice.due_date|date}}</td>
+          <td><button class="btn btn-sm btn-primary">View Invoice</button></td>
+
+          <button class="btn btn-sm btn--primary"></button>
+          <!-- <td>{{invoice.amount}}</td> -->
+          <!-- <td>{{invoice.invoice_status}}</td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
