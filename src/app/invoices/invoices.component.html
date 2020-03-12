@@ -6,20 +6,13 @@
     <table class="table">
       <thead>
         <tr>
-          <!-- <th scope="col">ID</th> -->
-          <!-- <th scope="col">Buyer</th> -->
           <th scope="col">Date posted</th>
           <th scope="col">Due Date</th>
           <th scope="col">Invoice</th>
-
-          <!-- <th scope="col">Amount</th> -->
-          <!-- <th scope="col">Invoice Status</th> -->
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let invoice of invoices" >
-          <!-- <th scope="row">{{invoice.id}}</th> -->
-          <!-- <td>{{invoice.buyer_id}}</td> -->
           <td scope="row">{{invoice.created_at|date}}</td>
           <td>{{invoice.due_date|date}}</td>
           <td><button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#invoiceModal">View Invoice</button></td>
@@ -100,16 +93,16 @@
         
             <tr class="item">
               <td>
-                Website design
+                
               </td>
               <td>
-                $300.00
+                Ksh. {{invoice.amount}}
               </td>
             </tr>
             <tr class="total">
               <td></td>
               <td>
-                Total: $385.00
+                Total: Ksh.{{invoice.amount}}
               </td>
             </tr>
           </table>
