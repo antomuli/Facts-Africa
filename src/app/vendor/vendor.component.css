@@ -1,3 +1,13 @@
+.mylogo{
+  color: white !important;
+}
+.myside .myside{
+  background-color: #0b6b4d !important;
+  color: white !important;
+}
+.myside:hover{
+  background-color: white !important;
+}
 .navbar{
     background:white !important;
    }
@@ -85,6 +95,7 @@ body {
 #sidebar-wrapper {
     
   min-height: 100vh;
+  background-color: #0b6b4d !important;
   margin-left: -15rem;
   -webkit-transition: margin .25s ease-out;
   -moz-transition: margin .25s ease-out;

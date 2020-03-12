@@ -20,7 +20,7 @@ const routes: Routes = [
     component: VendorComponent,
     children: [
       { path: 'viewbuyers', component: ViewbuyersComponent},
-      { path: 'invoices', component: InvoicesComponent},
+      { path: '', component: InvoicesComponent},
       { path: 'uploadinvoice', component: UploadComponent},
     ]
   },
