@@ -1,13 +1,11 @@
-<!-- NavBar END -->
-<!-- Bootstrap row -->
 <div class="d-flex" id="wrapper">
     <!-- Sidebar -->
-    <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="bg-light position position: sticky" id="sidebar-wrapper">
       <div class="sidebar-heading">Welcome</div>
       <div class="list-group list-group-flush">
-        <a routerLink='buyer' class="list-group-item list-group-item-action bg-light">Invoices</a>
+        <a routerLink="/buyer" class="list-group-item list-group-item-action bg-light">Invoices</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Invoice Statements</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">My Buyers</a>
+        <a href="" class="list-group-item list-group-item-action bg-light">My Buyers</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Request Loan</a>
       </div>
     </div>
@@ -48,7 +46,7 @@
         <!-- Sidebar -->
         <!-- sidebar-container END -->
         <div class="col p-4">
-          <h4 class="text-center">List Of Invoices.</h4>
+          <h4 class="text-center mt-5">List Of Invoices.</h4>
           <div>
             <a  (click)="Upload()" class='btn btn-primary m-5'>Upload Invoice</a>
           </div>
@@ -90,3 +88,4 @@
         </div>
         <!-- Main Col END -->
       </div>
+    
