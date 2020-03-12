@@ -8,14 +8,9 @@
       <div class="sidebar-heading">Welcome</div>
       <div class="list-group list-group-flush">
         
-        <a routerLink='buyer' class="list-group-item list-group-item-action bg-light">Invoices</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Invoice Statements</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">My Buyers</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Request Loan</a>
-
-
-
-  
+        <a routerLink='myinvoices' class="list-group-item list-group-item-action bg-light">Invoices</a>
+        <a routerLink='myinvoices' href="#" class="list-group-item list-group-item-action bg-light">Invoice Statements</a>
+        <a routerLink='viewvendors' href="#" class="list-group-item list-group-item-action bg-light">My Vendors</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -65,42 +60,11 @@
 
 
       <div class="row mt-4" id="body-row">
-        <router-outlet></router-outlet>
         <!-- Sidebar -->
         
         <!-- sidebar-container END -->
         <div class="col p-4">
-          <h4 class="text-center">List Of Invoices.</h4>
-          <div>
-            <a  (click)="Upload()" class='btn btn-primary m-5'>Upload Invoice</a>
-          </div>
-          <div class="card">
-            <h5 class="card-header font-weight-light text-center">Invoices</h5>
-            <div class="card-body">
-            <div class="container">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Buyer</th>
-                    <th scope="col">Due Date</th>
-                    <th scope="col">Amount</th>
-                    <th scope="col">Invoice Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let invoice of invoices" >
-                    <th scope="row">{{invoice.id}}</th>
-                    <td>{{invoice.buyer_id}}</td>
-                    <td>{{invoice.due_date}}</td>
-                    <td>{{invoice.amount}}</td>
-                    <td>{{invoice.invoice_status}}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            </div>
-          </div>
+          <router-outlet></router-outlet>
         </div>
         <!-- Main Col END -->
       </div>
