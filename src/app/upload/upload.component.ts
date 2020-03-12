@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { InvoiceService } from '../services/invoice/invoice.service';
-import { NumberSymbol } from '@angular/common';
 
 @Component({
   selector: 'app-upload',
@@ -12,27 +10,53 @@ import { NumberSymbol } from '@angular/common';
 })
 export class UploadComponent implements OnInit {
 
-  SERVER_URL = "https://facts-africa.herokuapp.com/api/invoices";
-  uploadForm: FormGroup; 
-  register;
+  token = localStorage.getItem('token')
+  private API = 'https://facts-africa.herokuapp.com/api/invoices';
+  headers = new HttpHeaders().set("Authorization", `Bearer ${this.token}`)
+  endurl = this.API + this.headers
 
-  constructor(private invoiceservice:InvoiceService) { }
+  uploadForm = new FormGroup({
+    buyer_id: new FormControl(),
+    amount: new FormControl(''),
+    due_date: new FormControl('')
+ });
 
-  ngOnInit() {
-    this.register ={
-      buyer: '',
-      amount:Number,
-      due_date: ''
+  constructor(private http: HttpClient,private invoiceService:InvoiceService) {
+   }
 
-
-    }
+   createAuthorizationHeader(headers: Headers) {
+    headers.append("Authorization", `Bearer ${this.token}`); 
   }
-  uploadInvoice(){
-    this.invoiceservice.invoiceUpload(this.register).subscribe(
-      response =>{
-         console.log(this.register.buyer+this.register.amount+this.register.due_date)
-      },error =>console.log('error',error)
-    )
+
+  get(API) {
+    let headers = new Headers();
+    this.createAuthorizationHeader(headers);
+    return this.http.get(API, {
+      headers: this.headers
+    });
+  }
+  post(url, data) {
+    let headers = new Headers();
+    this.createAuthorizationHeader(headers);
+    return this.http.post(url, data, {
+      headers: this.headers
+    });
+  }
+  getInvoices() {
+    console.log(this.headers)
+    return this.http.get<any>(this.API, { headers: this.headers})
+  }
+
+    postInvoices(){
+    let myinvoice = JSON.stringify(this.uploadForm.value);
+    console.warn(this.uploadForm.value);
+    this.http.post(this.API, myinvoice,{
+      headers: this.headers
+    }).subscribe(result => {
+      console.log( result );
+  });
+  }
+  ngOnInit() {
   }
 
 }

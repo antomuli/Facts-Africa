@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
       res => {
         localStorage.setItem('token', res.api_token)
         this._router.navigate(['vendor'])
+        // sessionStorage.setItem('id', data.id);
       },
       err => console.log(err)
     )

@@ -25,7 +25,7 @@ export class InvoiceService {
     return this.http.get<any>(this.API, { headers: this.headers})
   }
 
-  invoiceUpload(invoicedata): Observable<any> {
-    return this.http.post(this.API,{ headers: this.headers},invoicedata)
-  }
+  // postInvoices(): Observable<any> {
+  //   return this.http.post(this.API,{ headers: this.headers},invoicedata)
+  // }
 }
