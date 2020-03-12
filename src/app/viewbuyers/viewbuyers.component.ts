@@ -10,7 +10,7 @@ import { ViewbuyersService } from '../services/buyers/viewbuyers.service';
 })
 export class ViewbuyersComponent implements OnInit {
 
-  buyers = [];
+  buyers = []
 
   constructor(private dataService: ViewbuyersService, private router: Router, private http: HttpClient) { }
 
@@ -28,5 +28,9 @@ export class ViewbuyersComponent implements OnInit {
     localStorage.clear();
     this.router.navigate(['/']);
   }
+  Upload = () => {
+      this.router.navigate(['upload'])
+  }
+
 }
 
