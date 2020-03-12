@@ -3,6 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { VendorComponent } from './vendor/vendor.component';
 import { BuyerComponent } from './buyer/buyer.component';
+import { UploadComponent } from './upload/upload.component';
+import { ViewbuyersComponent } from './viewbuyers/viewbuyers.component';
+import { InvoicesComponent } from './invoices/invoices.component';
 
 
 const routes: Routes = [
@@ -13,12 +16,22 @@ const routes: Routes = [
   },
   {
     path: 'vendor',
-    component: VendorComponent
+    component: VendorComponent,
+    children: [
+      { path: 'viewbuyers', component: ViewbuyersComponent},
+      { path: 'invoices', component: InvoicesComponent},
+      { path: 'uploadinvoice', component: UploadComponent},
+    ]
   },
   {
     path: 'buyer',
     component: BuyerComponent
   },
+  {
+    path: 'upload',  
+    component: UploadComponent
+  },
+
 ];
 
 @NgModule({
