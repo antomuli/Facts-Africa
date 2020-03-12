@@ -15,10 +15,18 @@ export class ViewbuyersComponent implements OnInit {
   constructor(private dataService: ViewbuyersService, private router: Router, private http: HttpClient) { }
 
   ngOnInit() {
-    console.log('viewbuyers component loaded');
+    console.log("vendors component loaded")
     this.dataService.getBuyers().subscribe( res => {
-      this.buyers = res;
-    }, error => console.log(error));
+      this.buyers = res
+    }, error => console.log(error))
   }
 
+  
+
+  Logout =() => {
+    console.log("user is logging out")
+    localStorage.clear();
+    this.router.navigate(['/']);
+  }
 }
+
