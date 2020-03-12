@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { ViewvendorsService } from 'src/app/services/vendors/viewvendors.service';
 
 @Component({
   selector: 'app-viewvendors',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewvendorsComponent implements OnInit {
 
-  constructor() { }
+  vendor = []
+
+  constructor(private dataService: ViewvendorsService, private router: Router, private http: HttpClient) { }
+
 
   ngOnInit() {
+    console.log("vendors component loaded")
+    this.dataService.getVendor().subscribe( res => {
+      this.vendor = res
+    }, error => console.log(error))
   }
-
+  
+  Logout =() => {
+    console.log("user is logging out")
+    localStorage.clear();
+    this.router.navigate(['/']);
+  }
 }
+
+

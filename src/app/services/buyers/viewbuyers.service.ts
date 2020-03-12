@@ -20,7 +20,7 @@ export class ViewbuyersService {
 
   getBuyers() {
     console.log(this.headers)
-    return this.http.get(this.API, { headers: this.headers})
+    return this.http.get<any>(this.API, { headers: this.headers})
   }
 
   // postInvoices(): Observable<any> {
