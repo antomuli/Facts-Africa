@@ -1,188 +1,121 @@
-
-<!-- NavBar END -->
-<!-- Bootstrap row -->
-<div class="d-flex" id="wrapper">
-
-    <!-- Sidebar -->
-    <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Welcome</div>
-      <div class="list-group list-group-flush">
-        
-        <a routerLink='buyer' class="list-group-item list-group-item-action bg-light">Invoices</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Invoice Statements</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">My Buyers</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Request Loan</a>
-
-
-
-  
+<div class="col p-4">
+  <div class="m-3 p-2">
+    <form method="POST" action="" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Buyer</label>
+        <input type="text" id="buyer" class="form-control" id="exampleInputtext1" aria-describedby="textHelp"
+          placeholder="Enter Buyer">
       </div>
-    </div>
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-
-      <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-        <a class="navbar-brand" href="#">
-          <img
-            src="./assets/images/FACTS_logo-1.jpg"
-            height="40"
-            class="d-inline-block align-top "
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <div class="flex-grow-1 d-flex">
-            <form
-              class="form-inline flex-nowrap bg-light mx-0 mx-lg-auto rounded p-1"
-            >
-              <input
-                class="form-control mr-sm-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" (click)="Logout()" href="#">Logout</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <div class="row mt-4" id="body-row">
-        <router-outlet></router-outlet>
-        <!-- Sidebar -->
-        
-        <!-- sidebar-container END -->
-        <div class="col p-4">
-            <div class="m-3 p-2">
-                <form method="POST" [formGroup]='uploadForm' (ngSubmit)="postInvoices()">
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Buyer</label>
-                      <input type="number" id="buyer" class="form-control" id="exampleInputtext1" aria-describedby="textHelp" placeholder="Enter Buyer" formControlName="buyer_id">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputtext1">Amount</label>
-                        <input type="number" id="amount" class="form-control" id="exampleInputtext1" aria-describedby="textHelp" placeholder="Enter Amount" formControlName="amount">
-                      </div>                    <div class="form-group">
-                        <label for="exampleInputEmail1">Due date</label>
-                        <input type="date" id="duedate" class="form-control" placeholder="Enter Due Date" formControlName="due_date">
-                      </div>
-                    <button type="submit" id="upload" class="btn btn-primary">Submit</button>
-                  </form>
-            </div>
-        </div>
-        <div class="invoice-box">
-          <table cellpadding="0" cellspacing="0">
-            <tr class="top">
-            <td colspan="2">
-            <table>
-            <tr>
+      <div class="form-group">
+        <label for="exampleInputtext1">Amount</label>
+        <input type="text" id="amount" class="form-control" id="exampleInputtext1" aria-describedby="textHelp"
+          placeholder="Enter Amount">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Due date</label>
+        <input type="date" id="duedate" class="form-control" placeholder="Enter Due Date">
+      </div>
+      <button type="submit" id="upload" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+<div class="invoice-box">
+  <table cellpadding="0" cellspacing="0">
+    <tr class="top">
+      <td colspan="2">
+        <table>
+          <tr>
             <td class="title">
-            <img src="../../assets/images/FACTS_logo-1.jpg" style="width:100%; max-width:300px;">
+              <img src="../../assets/images/FACTS_logo-1.jpg" style="width:100%; max-width:300px;">
             </td>
             <td>
-            Invoice #: 123<br>
-            Created: March 10, 2020<br>
-            Due: April 21, 2020
-            </td>
-            </tr>
-            </table>
-            </td>
-            </tr>
-            
-            <tr class="information">
-            <td colspan="2">
-            <table>
-            <tr>
-            <td>
-            Sparksuite, Inc.<br>
-            12345 Sunny Road<br>
-            Sunnyville, CA 12345
-            </td>
-            <td>
-            Acme Corp.<br>
-            John Doe<br>
-            john@example.com
-            </td>
-            </tr>
-            </table>
-            </td>
-            </tr>
-            
-            <tr class="heading">
-            <td>
-            Payment Method
-            </td>
-            <td>
-            Check #
-            </td>
-            </tr>
-            
-            <tr class="details">
-            <td>
-            Check
-            </td>
-            <td>
-            1000
-            </td>
-            </tr>
-            
-            <tr class="heading">
-            <td>
-            Item
-            </td>
-            <td>
-            Price
+              Invoice #: 123<br>
+              Created: January 1, 2015<br>
+              Due: February 1, 2015
             </td>
           </tr>
+        </table>
+      </td>
+    </tr>
 
-          <tr class="item">
-          <td>
-          Website design
-          </td>
-          <td>
-          $300.00
-          </td>
+    <tr class="information">
+      <td colspan="2">
+        <table>
+          <tr>
+            <td>
+              Sparksuite, Inc.<br>
+              12345 Sunny Road<br>
+              Sunnyville, CA 12345
+            </td>
+            <td>
+              Acme Corp.<br>
+              John Doe<br>
+              john@example.com
+            </td>
           </tr>
-          
-          <tr class="item">
-          <td>
-          Hosting (3 months)
-          </td>
-          <td>
-          $75.00
-          </td>
-          </tr>
-          
-          <tr class="item last">
-          <td>
-          Domain name (1 year)
-          </td>
-          <td>
-          $10.00
-          </td>
-          </tr>
-          
-          <tr class="total">
-          <td></td>
-          <td>
-          Total: $385.00
-          </td>
-          </tr>
-          </table>
-      </div>
-      </div>
+        </table>
+      </td>
+    </tr>
+
+    <tr class="heading">
+      <td>
+        Payment Method
+      </td>
+      <td>
+        Check #
+      </td>
+    </tr>
+
+    <tr class="details">
+      <td>
+        Check
+      </td>
+      <td>
+        1000
+      </td>
+    </tr>
+
+    <tr class="heading">
+      <td>
+        Item
+      </td>
+      <td>
+        Price
+      </td>
+    </tr>
+
+    <tr class="item">
+      <td>
+        Website design
+      </td>
+      <td>
+        $300.00
+      </td>
+    </tr>
+
+    <tr class="item">
+      <td>
+        Hosting (3 months)
+      </td>
+      <td>
+        $75.00
+      </td>
+    </tr>
+
+    <tr class="item last">
+      <td>
+        Domain name (1 year)
+      </td>
+      <td>
+        $10.00
+      </td>
+    </tr>
+
+    <tr class="total">
+      <td></td>
+      <td>
+        Total: $385.00
+      </td>
+    </tr>
+  </table>
+</div>
