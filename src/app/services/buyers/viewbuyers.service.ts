@@ -8,7 +8,7 @@ const token = localStorage.getItem('token');
   providedIn: 'root'
 })
 export class ViewbuyersService {
-  private API = 'https://facts-africa.herokuapp.com/api/invoice/buyer';
+  private API = 'https://facts-africa.herokuapp.com/api/invoice/buyers';
   private apiToken: String;
 
   headers = new HttpHeaders().set('Authorization', `Bearer ${token}`)

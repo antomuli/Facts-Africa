@@ -19,7 +19,7 @@ export class ViewvendorsService {
 
   getVendor() {
     console.log(this.headers)
-    return this.http.get(this.API, { headers: this.headers})
+    return this.http.get<any>(this.API, { headers: this.headers})
   }
 
   // postInvoices(): Observable<any> {
