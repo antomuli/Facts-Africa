@@ -17,9 +17,16 @@ export class ViewvendorsComponent implements OnInit {
 
   ngOnInit() {
     console.log("vendors component loaded")
-    this.dataService.getVendors().subscribe( res => {
+    this.dataService.getVendor().subscribe( res => {
       this.vendor = res
     }, error => console.log(error))
   }
-
+  
+  Logout =() => {
+    console.log("user is logging out")
+    localStorage.clear();
+    this.router.navigate(['/']);
+  }
 }
+
+

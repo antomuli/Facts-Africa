@@ -7,20 +7,22 @@ const token = localStorage.getItem('token')
   providedIn: 'root'
 })
 export class ViewvendorsService {
-  private API = 'https://facts-africa.herokuapp.com/api/invoices/buyers';
+  private API = 'https://facts-africa.herokuapp.com/api/invoice/buyers';
   private apiToken: String;
 
-  headers = new HttpHeaders().set("Authorization", `Bearer ${token}`)
+  headers = new HttpHeaders().set('Authorization', `Bearer ${token}`)
 
   constructor(private http: HttpClient,) { 
     
   }
 
 
-  getVendors() {
+  getVendor() {
     console.log(this.headers)
-    return this.http.get<any>(this.API, { headers: this.headers})
+    return this.http.get(this.API, { headers: this.headers})
   }
 
- 
+  // postInvoices(): Observable<any> {
+  //   return this.http.post(this.API,{ headers: this.headers},invoicedata)
+  // }
 }
