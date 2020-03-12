@@ -11,6 +11,7 @@ import { BuyerComponent } from './buyer/buyer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UploadComponent } from './upload/upload.component';
 import { ViewbuyersComponent } from './viewbuyers/viewbuyers.component';
+import { InvoicesComponent } from './invoices/invoices.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ViewbuyersComponent } from './viewbuyers/viewbuyers.component';
     FooterComponent,
     BuyerComponent,
     UploadComponent,
-    ViewbuyersComponent, 
+    ViewbuyersComponent,
+    InvoicesComponent, 
   ],
   imports: [
     BrowserModule,
