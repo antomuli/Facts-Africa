@@ -6,7 +6,8 @@ import { BuyerComponent } from './buyer/buyer.component';
 import { UploadComponent } from './upload/upload.component';
 import { ViewbuyersComponent } from './viewbuyers/viewbuyers.component';
 import { InvoicesComponent } from './invoices/invoices.component';
-
+import { BuyerinvoiceComponent } from './components/buyerinvoice/buyerinvoice.component';
+import { ViewvendorsComponent } from './components/viewvendors/viewvendors.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,11 @@ const routes: Routes = [
   },
   {
     path: 'buyer',
-    component: BuyerComponent
+    component: BuyerComponent,
+    children: [
+      { path: 'viewvendors', component: ViewvendorsComponent},
+      { path: 'myinvoices', component: BuyerinvoiceComponent},
+    ]
   },
   {
     path: 'upload',  

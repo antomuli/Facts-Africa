@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UploadComponent } from './upload/upload.component';
 import { ViewbuyersComponent } from './viewbuyers/viewbuyers.component';
 import { InvoicesComponent } from './invoices/invoices.component';
+import { BuyerinvoiceComponent } from './components/buyerinvoice/buyerinvoice.component';
+import { ViewvendorsComponent } from './components/viewvendors/viewvendors.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { InvoicesComponent } from './invoices/invoices.component';
     BuyerComponent,
     UploadComponent,
     ViewbuyersComponent,
-    InvoicesComponent, 
+    InvoicesComponent,
+    BuyerinvoiceComponent,
+    ViewvendorsComponent, 
   ],
   imports: [
     BrowserModule,
