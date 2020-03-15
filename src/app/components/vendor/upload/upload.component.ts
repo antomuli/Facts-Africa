@@ -19,8 +19,6 @@ export class UploadComponent implements OnInit {
 
   constructor(private http: HttpClient,private invoiceService:InvoiceService) {
    }
-
- 
   postInvoice(){
     let myinvoice = JSON.stringify(this.uploadForm.value);
     console.warn(this.uploadForm.value);

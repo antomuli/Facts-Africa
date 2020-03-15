@@ -2,6 +2,15 @@
     <div class="col p-4">
         <div class="m-3 p-2">
           <form method="POST" action="" [formGroup]="uploadForm" (ngSubmit)="posyInvoice()" >
+          <div class="form-group">
+            <label for="exampleInputEmail1">Buyer</label>
+            <select class="custom-select" id="inputGroupSelect01">
+              <option value="default">Select project</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Buyer</label>
               <input

@@ -19,8 +19,4 @@ export class InvoiceComponent implements OnInit {
       this.invoices = res
     }, error => console.log(error))
   }
-  // Upload = () => {
-  //     this.router.navigate(['upload'])
-  // }
-
 }
