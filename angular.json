@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "factsafrica": {
+    "FactsAfricaProject": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/factsafrica",
+            "outputPath": "dist/FactsAfricaProject",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "factsafrica:build"
+            "browserTarget": "FactsAfricaProject:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "factsafrica:build:production"
+              "browserTarget": "FactsAfricaProject:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "factsafrica:build"
+            "browserTarget": "FactsAfricaProject:build"
           }
         },
         "test": {
@@ -111,19 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "factsafrica:serve"
+            "devServerTarget": "FactsAfricaProject:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "factsafrica:serve:production"
+              "devServerTarget": "FactsAfricaProject:serve:production"
             }
           }
         }
       }
-    }
-  },
-  "defaultProject": "factsafrica",
-  "cli": {
-    "analytics": "3a29f460-5c5d-4cf4-86a6-cd062c0c9329"
-  }
+    }},
+  "defaultProject": "FactsAfricaProject"
 }
