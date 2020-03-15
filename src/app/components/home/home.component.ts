@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { User, Role } from 'src/app/_models';
 import { UserService, AuthenticationService } from 'src/app/_services';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { InvoiceService } from 'src/app/_services/invoice/invoice.service';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +11,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+    public viewContainerRef: ViewContainerRef
     loading = false;
     currentUser: User;
     userFromApi: User;
+    invoices = []
 
     constructor(
         private userService: UserService,
+        private dataService: InvoiceService,
         private authenticationService: AuthenticationService,
         private router: Router,
     ) {
@@ -28,6 +32,9 @@ export class HomeComponent implements OnInit {
             this.loading = false;
             this.userFromApi = user;
         });
+        this.dataService.getInvoices().subscribe( res => {
+            this.invoices = res
+          }, error => console.log(error))
     }
     get isVendor() {
         return this.currentUser && this.currentUser.role === Role.Vendor;

@@ -1,0 +1,160 @@
+<h4 class="text-center mt-5">List Of Invoices.</h4>
+<div class="card">
+  <h5 class="card-header font-weight-light text-center">Invoices</h5>
+  <div class="card-body">
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Date posted</th>
+            <th scope="col">Due Date</th>
+            <th scope="col">Invoice</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let invoice of invoices">
+            <td scope="row">{{ invoice.created_at | date }}</td>
+            <td>{{ invoice.due_date | date }}</td>
+
+            <td>
+              <button
+                class="btn btn-sm btn-primary"
+                data-toggle="modal"
+                data-target="#name-"
+              >
+                View Invoice
+              </button>
+            </td>
+            <div
+              class="modal fade"
+              id="name-"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Modal title
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="invoice-box">
+                      <table
+                        cellpadding="0"
+                        cellspacing="0"
+                        id="contentToConvert"
+                      >
+                        <tr class="top">
+                          <td colspan="2">
+                            <table>
+                              <tr>
+                                <td class="title">
+                                  <img
+                                    src="../../assets/images/FACTS_logo-1.jpg"
+                                    style="width:100%; max-width:300px;"
+                                  />
+                                </td>
+                                <td>
+                                  Invoice #: {{ invoice.id }}<br />
+                                  Created: {{ invoice.created_at | date }}<br />
+                                  Due: {{ invoice.due_date | date }}
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+
+                        <tr class="information">
+                          <td colspan="2">
+                            <table>
+                              <tr>
+                                <td>
+                                  Sparksuite, Inc.<br />
+                                  12345 Sunny Road<br />
+                                  Sunnyville, CA 12345
+                                </td>
+                                <td>
+                                  Acme Corp.<br />
+                                  John Doe<br />
+                                  john@example.com
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+
+                        <tr class="heading">
+                          <td>
+                            Payment Method
+                          </td>
+                          <td>
+                            Check #
+                          </td>
+                        </tr>
+
+                        <tr class="details">
+                          <td>
+                            Check
+                          </td>
+                          <td>
+                            1000
+                          </td>
+                        </tr>
+
+                        <tr class="heading">
+                          <td>
+                            Item
+                          </td>
+                          <td>
+                            Price
+                          </td>
+                        </tr>
+
+                        <tr class="item">
+                          <td></td>
+                          <td>Ksh. {{ invoice.amount }}</td>
+                        </tr>
+                        <tr class="total">
+                          <td></td>
+                          <td>Total: Ksh.{{ invoice.amount }}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      value="CPTURE"
+                      (click)="captureScreen()"
+                    >
+                      Download
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

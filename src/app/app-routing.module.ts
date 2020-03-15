@@ -5,6 +5,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './_helpers';
 import { Role } from './_models';
 import { ViewbuyersComponent } from './components/vendor/viewbuyers/viewbuyers.component';
+import { InvoiceComponent } from './components/vendor/invoice/invoice.component';
+import { UploadComponent } from './components/vendor/upload/upload.component';
 
 
 const routes: Routes = [
@@ -13,11 +15,21 @@ const routes: Routes = [
       component: HomeComponent,
       canActivate: [AuthGuard],
       children: [
-        {
-          path: 'buyers',component: ViewbuyersComponent,canActivate: [AuthGuard]
+      {
+        path: '',component: InvoiceComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'buyers',component: ViewbuyersComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'upload',component: UploadComponent,
+        pathMatch: 'full'
       },
       ]
   },
+  // { path: '' , loadChildren:'src/app/components/home'},
   // {
   //     path: 'vendor',
   //     component: VendorComponent,

@@ -15,7 +15,6 @@ export class ViewbuyersComponent implements OnInit {
   constructor(private dataService: ViewbuyersService, private router: Router, private http: HttpClient) { }
 
   ngOnInit() {
-    console.log("vendors component loaded")
     this.dataService.getBuyers().subscribe( res => {
       this.buyers = res
     }, error => console.log(error))

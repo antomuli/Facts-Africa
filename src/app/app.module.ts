@@ -9,6 +9,8 @@ import { LoginComponent } from './components/login/login.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { ViewbuyersComponent } from './components/vendor/viewbuyers/viewbuyers.component';
+import { InvoiceComponent } from './components/vendor/invoice/invoice.component';
+import { UploadComponent } from './components/vendor/upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { ViewbuyersComponent } from './components/vendor/viewbuyers/viewbuyers.c
     HomeComponent,
     LoginComponent,
     ViewbuyersComponent,
+    InvoiceComponent,
+    UploadComponent,
   ],
   imports: [
     BrowserModule,
