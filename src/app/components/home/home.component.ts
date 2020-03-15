@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/_models';
+import { User, Role } from 'src/app/_models';
 import { UserService, AuthenticationService } from 'src/app/_services';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
@@ -28,6 +28,9 @@ export class HomeComponent implements OnInit {
             this.loading = false;
             this.userFromApi = user;
         });
+    }
+    get isVendor() {
+        return this.currentUser && this.currentUser.role === Role.Vendor;
     }
     Logout =() => {
         console.log("user is logging out")

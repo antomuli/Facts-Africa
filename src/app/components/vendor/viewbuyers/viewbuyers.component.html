@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let buyer of buyers">
+      <td>{{ buyer.first_name }}</td>
+      <td>{{ buyer.last_name }}</td>
+      <td>{{ buyer.email }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -7,7 +7,7 @@
         <a routerLink="" class="list-group-item list-group-item-action bg-light myside">Invoices</a>
         <a routerLink="uploadinvoice" href="#" class="list-group-item list-group-item-action bg-light myside">Upload Invoice</a>
         <a href="#" class="list-group-item list-group-item-action bg-light myside">Invoice Statements</a>
-        <a routerLink="viewbuyers" class="list-group-item list-group-item-action bg-light myside">My Buyers</a>
+        <a routerLink="viewbuyers" class="list-group-item list-group-item-action bg-light myside" routerLink="buyers" *ngIf="isVendor">My Buyers</a>
         <a href="#" class="list-group-item list-group-item-action bg-light myside">Request Loan</a>
         <a href="#" class="list-group-item list-group-item-action bg-light myside" (click)="Logout()">Logout</a>
       </div>
@@ -29,9 +29,7 @@
       </nav>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Simple Sidebar</h1>
-        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
+          <router-outlet> </router-outlet>
       </div>
     </div>
   </div>
