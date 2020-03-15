@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/_models';
 import { UserService, AuthenticationService } from 'src/app/_services';
 import { first } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,8 @@ export class HomeComponent implements OnInit {
 
     constructor(
         private userService: UserService,
-        private authenticationService: AuthenticationService
+        private authenticationService: AuthenticationService,
+        private router: Router,
     ) {
         this.currentUser = this.authenticationService.currentUserValue;
     }
@@ -27,4 +29,10 @@ export class HomeComponent implements OnInit {
             this.userFromApi = user;
         });
     }
+    Logout =() => {
+        console.log("user is logging out")
+        localStorage.clear();
+        this.authenticationService.logout();
+        this.router.navigate(['login']);
+      }
 }
