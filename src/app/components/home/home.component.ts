@@ -39,6 +39,9 @@ export class HomeComponent implements OnInit {
     get isVendor() {
         return this.currentUser && this.currentUser.role === Role.Vendor;
     }
+    get isBuyer() {
+        return this.currentUser && this.currentUser.role === Role.Buyer;
+    }
     Logout =() => {
         console.log("user is logging out")
         localStorage.clear();

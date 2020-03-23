@@ -4,11 +4,14 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">Facts Africa</div>
       <div class="list-group list-group-flush">
-        <a routerLink="" *ngIf="isVendor"  class="list-group-item list-group-item-action bg-light myside">Invoices</a>
-        <a routerLink="/upload" *ngIf="isVendor" class="list-group-item list-group-item-action bg-light myside">Upload Invoice</a>
+        <a [routerLink]="['']"  class="list-group-item list-group-item-action bg-light myside">Home</a>
+        <a [routerLink]="['/invoice']" *ngIf="isVendor"  class="list-group-item list-group-item-action bg-light myside">Invoices</a>
+        <a [routerLink]="['/upload']" *ngIf="isVendor" class="list-group-item list-group-item-action bg-light myside">Upload Invoice</a>
         <a routerLink="" *ngIf="isVendor" class="list-group-item list-group-item-action bg-light myside">Invoice Statements</a>
-        <a routerLink="/buyers" class="list-group-item list-group-item-action bg-light myside" routerLink="buyers" *ngIf="isVendor">My Buyers</a>
+        <a [routerLink]="['/buyers']" *ngIf="isVendor" class="list-group-item list-group-item-action bg-light myside">My Buyers</a>
         <a routerLink="" *ngIf="isVendor" class="list-group-item list-group-item-action bg-light myside">Request Loan</a>
+        <!-- Buyer Routes -->
+        <a [routerLink]="['/invoices']" *ngIf="isBuyer"  class="list-group-item list-group-item-action bg-light myside">Invoices</a>
         <a routerLink="" class="list-group-item list-group-item-action bg-light myside" (click)="Logout()">Logout</a>
       </div>
     </div>

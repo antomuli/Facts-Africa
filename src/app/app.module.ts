@@ -11,6 +11,8 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { ViewbuyersComponent } from './components/vendor/viewbuyers/viewbuyers.component';
 import { InvoiceComponent } from './components/vendor/invoice/invoice.component';
 import { UploadComponent } from './components/vendor/upload/upload.component';
+import { LandingComponent } from './components/landing/landing.component';
+import { InvoicesComponent } from './components/buyer/invoices/invoices.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { UploadComponent } from './components/vendor/upload/upload.component';
     ViewbuyersComponent,
     InvoiceComponent,
     UploadComponent,
+    LandingComponent,
+    InvoicesComponent
   ],
   imports: [
     BrowserModule,
