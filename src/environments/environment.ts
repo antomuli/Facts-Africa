@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: 'https://facts-africa.herokuapp.com/api'
+  apiUrl: 'http://factsafrika.herokuapp.com/api'
 };
