@@ -13,9 +13,13 @@ export class InvoiceService {
     
   }
   getInvoices() {
-    return this.http.get<any>(`${environment.apiUrl}/invoices`);
+    return this.http.get<any>(`${environment.apiUrl}/invoice`);
+  }
+  getBuyerInvoices() {
+    return this.http.get<any>(`${environment.apiUrl}/buyer/invoices`);
   }
 
+  // http://factsafrika.herokuapp.com/api/users/buyers
   // postInvoices(): Observable<any> {
   //   return this.http.post(this.API,{ headers: this.headers},invoicedata)
   // }
