@@ -11,7 +11,7 @@ export class VendorService {
     
   }
   getVendors() {
-    return this.http.get<any>(`${environment.apiUrl}/user/all`);
+    return this.http.get<any>(`${environment.apiUrl}/users/suppliers`);
   }
 
   // postInvoices(): Observable<any> {

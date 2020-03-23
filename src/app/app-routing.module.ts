@@ -9,6 +9,7 @@ import { InvoiceComponent } from './components/vendor/invoice/invoice.component'
 import { UploadComponent } from './components/vendor/upload/upload.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { InvoicesComponent } from './components/buyer/invoices/invoices.component';
+import { MyvendorsComponent } from './components/buyer/myvendors/myvendors.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,10 @@ const routes: Routes = [
         // buyer components
       {
         path: 'invoices',component: InvoicesComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'myvendors',component: MyvendorsComponent,
         pathMatch: 'full'
       },
       ]
