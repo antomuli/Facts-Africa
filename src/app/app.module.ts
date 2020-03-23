@@ -13,6 +13,7 @@ import { InvoiceComponent } from './components/vendor/invoice/invoice.component'
 import { UploadComponent } from './components/vendor/upload/upload.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { InvoicesComponent } from './components/buyer/invoices/invoices.component';
+import { MyvendorsComponent } from './components/buyer/myvendors/myvendors.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { InvoicesComponent } from './components/buyer/invoices/invoices.componen
     InvoiceComponent,
     UploadComponent,
     LandingComponent,
-    InvoicesComponent
+    InvoicesComponent,
+    MyvendorsComponent
   ],
   imports: [
     BrowserModule,

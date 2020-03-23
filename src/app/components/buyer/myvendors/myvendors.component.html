@@ -1,1 +1,14 @@
-<p>myvendors works!</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vendor of vendors">
+      <td>{{ vendor.name }}</td>
+      <td>{{ vendor.email }}</td>
+    </tr>
+  </tbody>
+</table>

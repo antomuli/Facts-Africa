@@ -12,6 +12,7 @@
         <a routerLink="" *ngIf="isVendor" class="list-group-item list-group-item-action bg-light myside">Request Loan</a>
         <!-- Buyer Routes -->
         <a [routerLink]="['/invoices']" *ngIf="isBuyer"  class="list-group-item list-group-item-action bg-light myside">Invoices</a>
+        <a [routerLink]="['/myvendors']" *ngIf="isBuyer"  class="list-group-item list-group-item-action bg-light myside">Vendors</a>
         <a routerLink="" class="list-group-item list-group-item-action bg-light myside" (click)="Logout()">Logout</a>
       </div>
     </div>
