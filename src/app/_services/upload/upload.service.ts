@@ -10,8 +10,8 @@ export class UploadService {
 
   constructor(private http: HttpClient) { }
 
-  // getPost() {
-  //   // return this.http.post<any>(`${environment.apiUrl}`);
-  //   return this.http.post<Invoice>((`${environment.apiUrl}`),)
-  // }
+   getPost(invoicepost) {
+    return this.http.post<any>(`${environment.apiUrl}`,invoicepost);
+    //return this.http.post<Invoice>((`${environment.apiUrl}`),)
+   }
 }
