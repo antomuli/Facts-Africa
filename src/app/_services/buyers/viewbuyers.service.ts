@@ -12,7 +12,7 @@ export class ViewbuyersService {
     
   }
   getBuyers() {
-    return this.http.get<any>(`${environment.apiUrl}/users/buyers `);
+    return this.http.get<any>(`${environment.apiUrl}/users/buyers`);
   }
 // http://factsafrika.herokuapp.com/api/users/buyers
   // postInvoices(): Observable<any> {

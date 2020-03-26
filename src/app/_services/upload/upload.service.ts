@@ -8,10 +8,16 @@ import { Invoice } from 'src/app/_models/invoice';
 })
 export class UploadService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   // getPost() {
   //   // return this.http.post<any>(`${environment.apiUrl}`);
   //   return this.http.post<Invoice>((`${environment.apiUrl}`),)
   // }
+  public sendFormData(formData) {
+    return this.httpClient.post<any>(`${environment.apiUrl}`, formData, {
+      reportProgress: true,
+      observe: 'events'
+    });
+}
 }

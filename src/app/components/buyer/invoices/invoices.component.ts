@@ -9,6 +9,11 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./invoices.component.css']
 })
 export class InvoicesComponent implements OnInit {
+  myInvoice = {
+    1: "Pending",
+    2: "Approved",
+    3: "Declined",
+};
 
   invoices = []
 

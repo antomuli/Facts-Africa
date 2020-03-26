@@ -25,7 +25,7 @@
             <td scope="row">{{ invoice.created_at | date }}</td>
             <td scope="row">{{ invoice.due_date | date }}</td>
             <td scope="row">{{ invoice.invoice_amount }}</td>
-            <td scope="row">{{ invoice.invoice_status }}</td>
+            <td scope="row">{{ myInvoice[invoice.invoice_status] }}</td>
 
             <td>
               <button
@@ -136,14 +136,14 @@
                   <div class="modal-footer">
                     <button
                       type="button"
-                      class="btn btn-secondary"
+                      class="btn btn-outline-primary"
                       data-dismiss="modal"
                     >
                       Close
                     </button>
                     <button
                       type="button"
-                      class="btn btn-primary"
+                      class="btn btn-outline-primary"
                       value="CPTURE"
                       (click)="captureScreen()"
                     >
