@@ -27,8 +27,8 @@
             <td scope="row">{{ invoice.created_at | date }}</td>
             <td scope="row">{{ invoice.due_date | date }}</td>
             <td scope="row">{{ invoice.invoice_amount }}</td>
-            <td scope="row" ng-if="invoice.status == 1 ">pending</td>
-            <td scope="row" ng-if="invoice.status == 2 ">approved</td>
+            <td scope="row">{{invoice.status}}</td>
+
 
 
             <td>
