@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Invoice } from 'src/app/_models/invoice';
 
 
 @Injectable({
@@ -13,7 +14,7 @@ export class InvoiceService {
     
   }
   getInvoices() {
-    return this.http.get<any>(`${environment.apiUrl}/invoice`);
+    return this.http.get<Invoice[]>(`${environment.apiUrl}/invoice`);
   }
   getBuyerInvoices() {
     return this.http.get<any>(`${environment.apiUrl}/buyer/invoices`);

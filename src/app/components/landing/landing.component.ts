@@ -18,10 +18,8 @@ export class LandingComponent implements OnInit {
   constructor(
     private authenticationService: AuthenticationService,
     private router: Router,
-  ) { }
-
-  ngOnInit() {
-  }
+  ) {}
+  ngOnInit() {}
   Logout =() => {
     console.log("user is logging out")
     localStorage.clear();

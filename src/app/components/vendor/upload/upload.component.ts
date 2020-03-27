@@ -4,6 +4,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { ViewbuyersService } from 'src/app/_services/buyers/viewbuyers.service';
+import { Invoice } from 'src/app/_models/invoice';
 
 @Component({
   selector: 'app-upload',
@@ -12,29 +13,31 @@ import { ViewbuyersService } from 'src/app/_services/buyers/viewbuyers.service';
 })
 export class UploadComponent implements OnInit {
 
+  invoice = Invoice;
   buyers =  []
 
   uploadForm = new FormGroup({
     buyer_id: new FormControl(),
-    amount: new FormControl(''),
-    due_date: new FormControl('')
+    amount: new FormControl(),
+    due_date: new FormControl()
  });
 
-  constructor(private http: HttpClient,private invoiceService:InvoiceService, private viewbuyersService:ViewbuyersService) {}
+  constructor(private viewbuyersService:ViewbuyersService, private http: HttpClient) {}
   // postInvoice(){
-  //   let myinvoice = JSON.stringify(this.uploadForm.value);
-  //   console.log(myinvoice)
   //   console.warn(this.uploadForm.value);
-  //   this.http.post(`${environment.apiUrl}/invoice`,myinvoice,{
+  //   console.log(this.uploadForm)
+  //   console.warn(this.uploadForm.value);
+  //   this.httpClient.post(`${environment.apiUrl}/invoice`,{
   //   }).subscribe(result => {
   //     console.log( result );
   // });
   // }
-  postInvoice(){}
   ngOnInit() {
     this.viewbuyersService.getBuyers().subscribe( res => {
       this.buyers = res
     }, error => console.log(error))
   }
-
+  postInvoice(){
+    this.http.post(`${environment.apiUrl}/invoice`, this.uploadForm).subscribe(status=> console.log(JSON.stringify(status)));
+  }
 }

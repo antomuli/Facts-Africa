@@ -1,5 +1,13 @@
+import { Status } from './status';
+
 export class Invoice {
-    buyer_id: string;
-    due_date: string;
-    amount: number;
+    id: number;
+    supplier_id: number;
+    buyer_id: number;
+    invoice_status: Status;
+    invoice_amount: number;
+    due_date: Date;
+    created_at: Date;
+    updated_at: Date;
 }
+

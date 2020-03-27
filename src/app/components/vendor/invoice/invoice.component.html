@@ -3,11 +3,12 @@
   <h5 class="card-header font-weight-light text-center">Invoices</h5>
   <div class="card-body">
     <div class="container">
-      <table class="table">
+      <table class="table" *ngIf="invoices">
         <thead>
           <tr>
             <th scope="col">Date posted</th>
             <th  scope="col">Due Date</th>
+            <th  scope="col">Status</th>
             <th scope="col">Invoice</th>
           </tr>
         </thead>
@@ -15,7 +16,11 @@
           <tr *ngFor="let invoice of invoices">
             <td scope="row">{{ invoice.created_at | date }}</td>
             <td>{{ invoice.due_date | date }}</td>
-
+            <td>
+            <p *ngIf="invoice.invoice_status==1" class="text-primary font-weight-bold">Pending</p>
+            <p *ngIf="invoice.invoice_status==2" class="text-success font-weight-bold">Approved</p>
+            <p *ngIf="invoice.invoice_status==3" class="text-danger font-weight-bold">Declined</p>
+            </td>
             <td>
               <button
                 class="btn btn-sm btn-primary"
@@ -37,7 +42,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">
-                      Modal title
+                    Invoice
                     </h5>
                     <button
                       type="button"
@@ -78,11 +83,15 @@
                         <tr class="information">
                           <td colspan="2">
                             <table>
-                              <tr>
+                            <tr>
                                 <td>
-                                  Sparksuite, Inc.<br />
-                                  12345 Sunny Road<br />
-                                  Sunnyville, CA 12345
+                                  FACTS (KENYA) LIMITED<br />
+                                  P.O.BOX 21934-00505,<br />
+                                  5th Floor, Laiboni Center,<br />
+                                  Lenana Road,<br />
+                                  Nairobi – Kenya<br />
+                                  Phone: +254 724 114 111<br />
+                                  Email: info@factsafrica.com<br />
                                 </td>
                                 <td>
                                   Acme Corp.<br />
@@ -102,16 +111,6 @@
                             Check #
                           </td>
                         </tr>
-
-                        <tr class="details">
-                          <td>
-                            Check
-                          </td>
-                          <td>
-                            1000
-                          </td>
-                        </tr>
-
                         <tr class="heading">
                           <td>
                             Item
@@ -120,14 +119,9 @@
                             Price
                           </td>
                         </tr>
-
-                        <tr class="item">
-                          <td></td>
-                          <td>Ksh. {{ invoice.amount }}</td>
-                        </tr>
                         <tr class="total">
                           <td></td>
-                          <td>Total: Ksh.{{ invoice.amount }}</td>
+                          <td>Total: Ksh.{{ invoice.invoice_amount }}</td>
                         </tr>
                       </table>
                     </div>
@@ -142,7 +136,7 @@
                     </button>
                     <button
                       type="button"
-                      class="btn btn-primary"
+                      class="btn btn-outline-primary"
                       value="CPTURE"
                       (click)="captureScreen()"
                     >
