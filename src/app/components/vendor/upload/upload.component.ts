@@ -4,12 +4,12 @@ import { HttpClient } from '@angular/common/http';
 
 
 @Component({
-  selector: 'app-file-upload',
-  templateUrl: './file-upload.component.html',
-  styleUrls: ['./file-upload.component.css']
+  selector: 'app-upload',
+  templateUrl: './upload.component.html',
+  styleUrls: ['./upload.component.css']
 })
 
-export class FileUploadComponent implements OnInit {
+export class UploadComponent implements OnInit {
   form: FormGroup;
 
   constructor(
