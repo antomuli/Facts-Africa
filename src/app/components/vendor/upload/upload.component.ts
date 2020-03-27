@@ -22,7 +22,7 @@ export class UploadComponent implements OnInit {
     due_date: new FormControl()
  });
 
-  constructor(private viewbuyersService:ViewbuyersService, private http: HttpClient) {}
+  //constructor(private viewbuyersService:ViewbuyersService, private http: HttpClient) {}
   // postInvoice(){
   //   console.warn(this.uploadForm.value);
   //   console.log(this.uploadForm)
@@ -32,6 +32,12 @@ export class UploadComponent implements OnInit {
   //     console.log( result );
   // });
   // }
+  constructor(public fb: FormBuilder) {
+   this.form = this.fb.group({
+     name: [''],
+     avatar: [null]
+   })
+ }
   ngOnInit() {
     this.viewbuyersService.getBuyers().subscribe( res => {
       this.buyers = res
