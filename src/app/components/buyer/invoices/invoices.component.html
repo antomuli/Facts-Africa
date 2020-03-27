@@ -27,7 +27,11 @@
             <td scope="row">{{ invoice.created_at | date }}</td>
             <td scope="row">{{ invoice.due_date | date }}</td>
             <td scope="row">{{ invoice.invoice_amount }}</td>
-            <td scope="row">{{invoice.status}}</td>
+            <td scope="row">
+              <p *ngIf="invoice.invoice_status==1">pending</p>
+              <p *ngIf="invoice.invoice_status==2">approved</p>
+              <p *ngIf="invoice.invoice_status==3">declined</p>
+              </td>
 
 
 
