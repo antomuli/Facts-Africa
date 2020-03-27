@@ -1,22 +1,24 @@
 <div class="row">
   <div class="col p-4">
 <div class="card m-3 p-3">
-  <div class="m-3 p-2">
+  <div class="m-3 p-2" [hidden]="submitted">
     <form
+    ng-show="showTheForm" ng-submit="processForm()"
       method="POST"
       action=""
       [formGroup]="uploadForm"
-      (ngSubmit)="postInvoice(form.value)"
+      (ngSubmit)="postInvoice()"
+       #myForm="ngForm"
+       id="form"
     >
       <div class="form-group">
         <label for="exampleInputEmail1">Buyer</label>
-            <select class="custom-select" id="inputGroupSelect01" formControlName="buyer_id"  >
+            <select class="custom-select" id="inputGroupSelect01" formControlName="buyer_id">
           <option value="default">Select Buyer</option>
           <option
-            value="default"
             id="buyer"
             value="{{ buyers.id }}"
-            [ngValue]="city"
+            [ngValue]="buyers"
             *ngFor="let buyers of buyers"
             >{{ buyers.name }}</option
           >
@@ -39,12 +41,13 @@
           id="amount"
           class="form-control"
           id="exampleInputtext1"
-          formControlName="amount"
+          formControlName="invoice_amount"
           aria-describedby="textHelp"
           placeholder="Enter Amount"
         />
       </div>
-      <button type="submit" id="upload" class="btn btn-outline-primary">
+      <button type="submit" id="upload" class="btn btn-outline-primary" 
+       ng-click="showTheForm = false">
         Submit
       </button>
     </form>
