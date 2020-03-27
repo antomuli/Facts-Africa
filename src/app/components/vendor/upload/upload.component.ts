@@ -18,26 +18,20 @@ export class UploadComponent implements OnInit {
   ) {
     this.form = this.fb.group({
       name: [''],
-      avatar: [null]
+      type: ['']
     })
   }
 
   ngOnInit() { }
 
-  uploadFile(event) {
-    const file = (event.target as HTMLInputElement).files[0];
-    this.form.patchValue({
-      avatar: file
-    });
-    this.form.get('avatar').updateValueAndValidity()
-  }
+
 
   submitForm() {
     var formData: any = new FormData();
     formData.append("name", this.form.get('name').value);
-    formData.append("avatar", this.form.get('avatar').value);
+    formData.append("type", this.form.get('type').value);
 
-    this.http.post('http://localhost:4000/api/create-user', formData).subscribe(
+    this.http.post(`${environment.apiUrl}/invoice`, formData).subscribe(
       (response) => console.log(response),
       (error) => console.log(error)
     )
