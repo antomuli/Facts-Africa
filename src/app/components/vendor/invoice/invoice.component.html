@@ -16,7 +16,11 @@
           <tr *ngFor="let invoice of invoices">
             <td scope="row">{{ invoice.created_at | date }}</td>
             <td>{{ invoice.due_date | date }}</td>
-            <td>{{ myInvoice[invoice.invoice_status] }}</td>
+            <td>
+            <p *ngIf="invoice.invoice_status==1" class="text-primary font-weight-bold">Pending</p>
+            <p *ngIf="invoice.invoice_status==2" class="text-success font-weight-bold">Approved</p>
+            <p *ngIf="invoice.invoice_status==3" class="text-danger font-weight-bold">Declined</p>
+            </td>
             <td>
               <button
                 class="btn btn-sm btn-primary"

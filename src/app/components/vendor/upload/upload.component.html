@@ -6,7 +6,7 @@
       method="POST"
       action=""
       [formGroup]="uploadForm"
-      (ngSubmit)="postInvoice()"
+      (ngSubmit)="postInvoice(form.value)"
     >
       <div class="form-group">
         <label for="exampleInputEmail1">Buyer</label>
