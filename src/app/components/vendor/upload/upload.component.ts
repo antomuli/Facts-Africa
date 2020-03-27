@@ -1,49 +1,46 @@
 import { Component, OnInit } from '@angular/core';
-import { InvoiceService } from 'src/app/_services/invoice/invoice.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup } from "@angular/forms";
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import { ViewbuyersService } from 'src/app/_services/buyers/viewbuyers.service';
-import { Invoice } from 'src/app/_models/invoice';
+
 
 @Component({
-  selector: 'app-upload',
-  templateUrl: './upload.component.html',
-  styleUrls: ['./upload.component.css']
+  selector: 'app-file-upload',
+  templateUrl: './file-upload.component.html',
+  styleUrls: ['./file-upload.component.css']
 })
-export class UploadComponent implements OnInit {
 
-  invoice = Invoice;
-  buyers =  []
+export class FileUploadComponent implements OnInit {
+  form: FormGroup;
 
-  uploadForm = new FormGroup({
-    buyer_id: new FormControl(),
-    amount: new FormControl(),
-    due_date: new FormControl()
- });
-
-  constructor(private viewbuyersService:ViewbuyersService, private http: HttpClient) {}
-  // postInvoice(){
-  //   console.warn(this.uploadForm.value);
-  //   console.log(this.uploadForm)
-  //   console.warn(this.uploadForm.value);
-  //   this.httpClient.post(`${environment.apiUrl}/invoice`,{
-  //   }).subscribe(result => {
-  //     console.log( result );
-  // });
-  // }
-//  constructor(public fb: FormBuilder) {
-  // this.form = this.fb.group({
-    // name: [''],
-     //avatar: [null]
-   //})
- //}
-  ngOnInit() {
-    this.viewbuyersService.getBuyers().subscribe( res => {
-      this.buyers = res
-    }, error => console.log(error))
+  constructor(
+    public fb: FormBuilder,
+    private http: HttpClient
+  ) {
+    this.form = this.fb.group({
+      name: [''],
+      avatar: [null]
+    })
   }
-  postInvoice(){
-    this.http.post(`${environment.apiUrl}/invoice`, this.uploadForm).subscribe(status=> console.log(JSON.stringify(status)));
+
+  ngOnInit() { }
+
+  uploadFile(event) {
+    const file = (event.target as HTMLInputElement).files[0];
+    this.form.patchValue({
+      avatar: file
+    });
+    this.form.get('avatar').updateValueAndValidity()
   }
+
+  submitForm() {
+    var formData: any = new FormData();
+    formData.append("name", this.form.get('name').value);
+    formData.append("avatar", this.form.get('avatar').value);
+
+    this.http.post('http://localhost:4000/api/create-user', formData).subscribe(
+      (response) => console.log(response),
+      (error) => console.log(error)
+    )
+  }
+
 }
