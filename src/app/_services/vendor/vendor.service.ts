@@ -7,8 +7,8 @@ import { environment } from 'src/environments/environment';
 })
 export class VendorService {
 
-  constructor(private http: HttpClient,) { 
-    
+  constructor(private http: HttpClient,) {
+
   }
   getVendors() {
     return this.http.get<any>(`${environment.apiUrl}/users/suppliers`);

@@ -10,9 +10,9 @@ export class UploadService {
 
   constructor(private httpClient: HttpClient) { }
 
-  // getPost() {
-  //   // return this.http.post<any>(`${environment.apiUrl}`);
-  //   return this.http.post<Invoice>((`${environment.apiUrl}`),)
+   //getPost(invoicepost): Observable <any> {
+    //return this.http.post(`${environment.apiUrl}`,invoicepost);
+    //return this.http.post<Invoice>((`${environment.apiUrl}`),)
   // }
   public sendFormData(formData) {
     return this.httpClient.post<any>(`${environment.apiUrl}`, formData, {

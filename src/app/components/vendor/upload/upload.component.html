@@ -25,10 +25,12 @@
         <label for="exampleInputEmail1">Due date</label>
         <input
           type="date"
+          required
           id="duedate"
           class="form-control"
           formControlName="due_date"
           placeholder="Enter Due Date"
+          required
         />
       </div>
       <div class="form-group">
@@ -41,8 +43,12 @@
           formControlName="invoice_amount"
           aria-describedby="textHelp"
           placeholder="Enter Amount"
+          
         />
+
       </div>
+      <button type="submit" id="upload" class="btn btn-outline-primary"
+       ng-click="showTheForm = false" [disabled]="!uploadForm.valid">
       <button type="submit" id="upload" class="btn btn-outline-primary" 
       ng-model="SuccessAlert">
         Submit
