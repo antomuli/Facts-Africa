@@ -1,15 +1,12 @@
 <div class="row">
   <div class="col p-4">
-<div class="card m-3 p-3">
-  <div class="m-3 p-2" [hidden]="submitted">
+<div class="card m-3 p-3" [hidden]="submitted">
+  <div class="m-3 p-2">
     <form
-    ng-show="showTheForm" ng-submit="processForm()"
       method="POST"
       action=""
       [formGroup]="uploadForm"
       (ngSubmit)="postInvoice()"
-       #myForm="ngForm"
-       id="form"
     >
       <div class="form-group">
         <label for="exampleInputEmail1">Buyer</label>
@@ -52,6 +49,8 @@
       </div>
       <button type="submit" id="upload" class="btn btn-outline-primary"
        ng-click="showTheForm = false" [disabled]="!uploadForm.valid">
+      <button type="submit" id="upload" class="btn btn-outline-primary" 
+      ng-model="SuccessAlert">
         Submit
       </button>
     </form>
