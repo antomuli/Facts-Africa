@@ -28,9 +28,10 @@
         <label for="exampleInputEmail1">Due date</label>
         <input
           type="date"
+          required
           id="duedate"
           class="form-control"
-          formControlName="due_date"
+          [formControlName]="due_date"
           placeholder="Enter Due Date"
         />
       </div>
@@ -41,10 +42,11 @@
           id="amount"
           class="form-control"
           id="exampleInputtext1"
-          formControlName="invoice_amount"
+          [formControlName]="invoice_amount"
           aria-describedby="textHelp"
           placeholder="Enter Amount"
         />
+
       </div>
       <button type="submit" id="upload" class="btn btn-outline-primary"
        ng-click="showTheForm = false">

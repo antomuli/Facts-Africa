@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InvoiceService } from 'src/app/_services/invoice/invoice.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl ,Validators} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { ViewbuyersService } from 'src/app/_services/buyers/viewbuyers.service';
@@ -44,6 +44,7 @@ export class UploadComponent implements OnInit {
   });
   // this.router.navigate(['/invoice']);
   }
+
   submitted = false;
 
   onSubmit() { this.submitted = true; }
