@@ -14,6 +14,7 @@ import { UploadComponent } from './components/vendor/upload/upload.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { InvoicesComponent } from './components/buyer/invoices/invoices.component';
 import { MyvendorsComponent } from './components/buyer/myvendors/myvendors.component';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MyvendorsComponent } from './components/buyer/myvendors/myvendors.compo
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FlashMessagesModule.forRoot(),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

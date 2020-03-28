@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { ViewbuyersService } from 'src/app/_services/buyers/viewbuyers.service';
 import { Invoice } from 'src/app/_models/invoice';
 import { Router } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-upload',
@@ -24,6 +25,7 @@ export class UploadComponent implements OnInit {
  });
 
   constructor(private viewbuyersService:ViewbuyersService, 
+    private flashMessage: FlashMessagesService,
     private httpClient: HttpClient,private router: Router,) {}
   ngOnInit() {
     this.viewbuyersService.getBuyers().subscribe( res => {
@@ -42,7 +44,8 @@ export class UploadComponent implements OnInit {
     }).subscribe(result => {
       console.log( result );
   });
-  // this.router.navigate(['/invoice']);
+  this.flashMessage.show('Invoice Uploaded Succesfully!', { cssClass: 'alert-success mt-3', timeout: 2000 });
+  this.router.navigate(['/invoice']);
   }
   onSubmit() { this.submitted = true; }
   isShown: boolean = false ; // hidden by default
