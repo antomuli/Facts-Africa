@@ -44,8 +44,6 @@ export class UploadComponent implements OnInit {
   });
   // this.router.navigate(['/invoice']);
   }
-  submitted = false;
-
   onSubmit() { this.submitted = true; }
   isShown: boolean = false ; // hidden by default
 
