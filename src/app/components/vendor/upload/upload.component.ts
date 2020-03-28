@@ -19,7 +19,7 @@ export class UploadComponent implements OnInit {
 
   uploadForm = new FormGroup({
     buyer_id: new FormControl(),
-    invoice_amount: new FormControl(),
+    invoice_amount: new FormControl('',[Validators.required]),
     due_date: new FormControl()
  });
 
