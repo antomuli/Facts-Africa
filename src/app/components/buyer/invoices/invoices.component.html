@@ -4,37 +4,49 @@
   <div class="card-body">
     <div class="container">
       <table class="table">
-      <!--         "supplier_id": 3,
-        "buyer_id": 4,
-        "invoice_status": 1,
-        "invoice_amount": "934500",
-        "due_date": "2020-04-02",
-        "created_at": "2020-03-18T11:35:03.000000Z",
-        "updated_at": "2020-03-18T11:35:03.000000Z" -->
         <thead>
           <tr>
             <th scope="col">Date posted</th>
-            <th  scope="col">Due Date</th>
-            <th  scope="col">Amount</th>
-            <th  scope="col">Status</th>
-            <th scope="col">Invoice</th>
+            <th scope="col">Due Date</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Status</th>
+            <th scope="col">Approve Invoice</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let invoice of invoices">
+          <tr *ngFor="let invoice of listInvoices">
             <td scope="row">{{ invoice.created_at | date }}</td>
             <td scope="row">{{ invoice.due_date | date }}</td>
             <td scope="row">{{ invoice.invoice_amount }}</td>
-            <td scope="row">{{ myInvoice[invoice.invoice_status] }}</td>
+            <td scope="row">
+              <p
+                *ngIf="invoice.invoice_status == 1"
+                class="text-primary font-weight-bold"
+              >
+                Pending
+              </p>
+              <p
+                *ngIf="invoice.invoice_status == 2"
+                class="text-success font-weight-bold"
+              >
+                Approved
+              </p>
+              <p
+                *ngIf="invoice.invoice_status == 3"
+                class="text-danger font-weight-bold"
+              >
+                Declined
+              </p>
+            </td>
 
             <td>
-              <button
-                class="btn btn-sm btn-primary"
-                data-toggle="modal"
-                data-target="#name-"
-              >
-                View Invoice
-              </button>
+              <p *ngIf="invoice.invoice_status == 2" class="text-success">
+                Approved
+              </p>
+              <p *ngIf="invoice.invoice_status == 1"><a href="" routerLink="/{{invoice.id}}">Approve</a></p>
+              <p *ngIf="invoice.invoice_status == 3" class="text-danger">
+                Delete
+              </p>
             </td>
             <div
               class="modal fade"

@@ -3,14 +3,14 @@
 <div class="card m-3 p-3" [hidden]="submitted">
   <div class="m-3 p-2">
     <form
-      method="POST"
+      method="POST" 
       action=""
       [formGroup]="uploadForm"
       (ngSubmit)="postInvoice()"
     >
       <div class="form-group">
         <label for="exampleInputEmail1">Buyer</label>
-            <select class="custom-select" id="inputGroupSelect01" formControlName="buyer_id">
+            <select class="custom-select" id="inputGroupSelect01" required formControlName="buyer_id">
           <option value="default">Select Buyer</option>
           <option
             id="buyer"
@@ -25,7 +25,6 @@
         <label for="exampleInputEmail1">Due date</label>
         <input
           type="date"
-          required
           id="duedate"
           class="form-control"
           formControlName="due_date"

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,8 @@ import { LandingComponent } from './components/landing/landing.component';
 import { InvoicesComponent } from './components/buyer/invoices/invoices.component';
 import { MyvendorsComponent } from './components/buyer/myvendors/myvendors.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
+import { ApproveComponent } from './components/buyer/approve/approve.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
     UploadComponent,
     LandingComponent,
     InvoicesComponent,
-    MyvendorsComponent
+    MyvendorsComponent,
+    ApproveComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +37,8 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
     ReactiveFormsModule,
     HttpClientModule,
     FlashMessagesModule.forRoot(),
+    FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
