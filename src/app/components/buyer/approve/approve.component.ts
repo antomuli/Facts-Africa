@@ -46,8 +46,8 @@ export class ApproveComponent implements OnInit {
     }).subscribe(result => {
       console.log( result );
   });
-    // this.flashMessage.show('Invoice Updated Succesfully Succesfully!', { cssClass: 'alert-success mt-3', timeout: 2000 });
-    // this.router.navigate(['/invoice']);
+    this.flashMessage.show('Invoice Updated Succesfully Succesfully!', { cssClass: 'alert-success mt-3', timeout: 2000 });
+    this.router.navigate(['/invoice']);
   }
   }
 
