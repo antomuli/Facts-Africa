@@ -43,7 +43,7 @@
               <p *ngIf="invoice.invoice_status == 2" class="text-success">
                 Approved
               </p>
-              <p *ngIf="invoice.invoice_status == 1"><a href="">Approve</a></p>
+              <p *ngIf="invoice.invoice_status == 1"><a href="" routerLink="/approve/{{invoice.id}}">Approve</a></p>
               <p *ngIf="invoice.invoice_status == 3" class="text-danger">
                 Delete
               </p>

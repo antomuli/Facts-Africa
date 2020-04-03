@@ -45,6 +45,10 @@ const routes: Routes = [
         path: 'myvendors',component: MyvendorsComponent,
         pathMatch: 'full'
       },
+      {
+        path: 'approve/:id',component: ApproveComponent,
+        pathMatch: 'full'
+      },
       ]
   },
   // { path: '' , loadChildren:'src/app/components/home'},
