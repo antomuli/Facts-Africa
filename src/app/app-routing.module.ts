@@ -45,10 +45,6 @@ const routes: Routes = [
         path: 'myvendors',component: MyvendorsComponent,
         pathMatch: 'full'
       },
-      {
-        path: ':id',component: ApproveComponent,
-        pathMatch: 'full'
-      },
       ]
   },
   // { path: '' , loadChildren:'src/app/components/home'},
@@ -64,7 +60,7 @@ const routes: Routes = [
   },
 
   // otherwise redirect to home
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' }  
 ];
 //RouterModule.forRoot(routes, {useHash: true}); // Solved this error: -->  SecurityError: Failed to execute 'pushState' on 'History': 
 export const routing = RouterModule.forRoot(routes, { enableTracing: false });

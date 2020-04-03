@@ -20,7 +20,7 @@ export class InvoiceService {
     return this.http.get<any>(`${environment.apiUrl}/invoice/${id}`);
   }
   getInvoiceById(id: number) {
-    const url = `${environment.invoiceUrl}/${id}`;
+    const url = `${environment.apiUrl}/invoice/update/${id}`;
     return this.http
       .get<Invoice>(url)
       .pipe(
@@ -37,7 +37,7 @@ export class InvoiceService {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
-    return this.http.put(`${environment.invoiceUrl}/${invoice.id}`, invoice, httpOptions).pipe(
+    return this.http.put(`${environment.apiUrl}/invoice/update/${invoice.id}`, invoice, httpOptions).pipe(
       tap(updatedInvoice => console.log(`updated invoice = ${JSON.stringify(updatedInvoice)}`)),
       catchError(error => of(new Invoice()))
     );
