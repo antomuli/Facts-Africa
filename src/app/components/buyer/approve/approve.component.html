@@ -1,8 +1,22 @@
 <div class="row">
   <div class="col p-4">
   <div class="card m-3 p-3">
+    <h5 class="text-center font-weight-bold">Invoice Details</h5>
+    <table class="table" *ngIf="invoice">
+      <thead>
+        <tr>
+          <th scope="col">INVOICE ID</th>
+          <th scope="col">INVOICE AMOUNT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{invoice.id}}</th>
+          <td>{{invoice.invoice_amount}}</td>
+        </tr>
+      </tbody>
+    </table>
     <form *ngIf="invoice" [formGroup]="approveForm">
-      <h3>You selected an Invoice Number {{ invoice.id }}</h3>
       <!-- Material unchecked -->
         <div class="form-check">
           <input type="radio" class="form-check-input" formControlName="invoice_status" value="2" id="materialUnchecked" name="invoice_status">
